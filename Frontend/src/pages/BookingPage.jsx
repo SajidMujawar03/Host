@@ -45,7 +45,12 @@ const BookingPage = () => {
 
     const fetchBookingDetails = async () => {
         try {
-            const response = await fetch(`/bookings/booking/${slotId}`);
+            const response = await fetch(`/bookings/booking/${slotId}`, {
+                method: 'get',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
             console.log(response)
             const res = await response.json();
             const datas = res.data;
@@ -88,7 +93,12 @@ const BookingPage = () => {
         try{
         const fetchSlotDetails = async () => {
             try {
-                const response = await fetch(`/slot/slot/${slotId}`);
+                const response = await fetch(`/slot/slot/${slotId}`, {
+                    method: 'get',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                });
                 const data = await response.json();
                 setSlot(data.data);
             } catch (error) {
