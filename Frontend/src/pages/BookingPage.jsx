@@ -83,6 +83,8 @@ const BookingPage = () => {
     };
 
     useEffect(() => {
+
+        try{
         const fetchSlotDetails = async () => {
             try {
                 const response = await fetch(`/slot/slot/${slotId}`);
@@ -95,6 +97,11 @@ const BookingPage = () => {
 
         fetchSlotDetails();
         fetchBookingDetails();
+    }
+    catch(error)
+    {
+        console.log(error)
+    }
     }, [slotId]);
 
     useEffect(() => {
