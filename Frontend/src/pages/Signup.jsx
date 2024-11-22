@@ -52,7 +52,7 @@ const Signup = () => {
     try {
 
       
-      const res = await fetch(`api/v1/auth/register`, {
+      const res = await fetch(`/auth/register`, {
         method: 'post',
         headers: {
           "Content-Type": "application/json"

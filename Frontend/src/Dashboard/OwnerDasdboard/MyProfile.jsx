@@ -76,7 +76,7 @@ const MyProfile = ({user}) => {
     
     try {
       
-      const res =await fetch(`api/v1/owner/${user._id}`,
+      const res =await fetch(`/owner/${user._id}`,
         {method:'put',
         headers:{
             "Content-Type":"application/json",

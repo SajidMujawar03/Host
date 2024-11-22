@@ -43,7 +43,10 @@ const corsOptions = {
 
 
 mongoose.set({"strictQuery":true})
-
+app.get("*",(req,res)=>{
+        
+    res.sendFile(path.resolve(_dirname,"Frontend","dist","index.html"))
+})
 
 app.use(cookiePraser())
 app.use(express.json());
@@ -59,9 +62,7 @@ app.use('/api/v1/bookings',booking)
 app.use('/api/v1/webReview',websiteReview)
 
 
-// app.get("*",(req,res)=>{
-//         res.sendFile(path.resolve(_dirname,"Frontend","dist","index.html"))
-// })
+
 
 
 const connectDB = async () => {

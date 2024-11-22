@@ -106,7 +106,7 @@ const MyBookings = () => {
       };
 
       // Send POST request to create slot
-      const response = await fetch(`api/v1/slot/create-slot`, {
+      const response = await fetch(`/slot/create-slot`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
