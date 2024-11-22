@@ -59,9 +59,9 @@ app.use('/api/v1/bookings',booking)
 app.use('/api/v1/webReview',websiteReview)
 
 
-app.get("*",(req,res)=>{
-        res.sendFile(path.resolve(_dirname,"Frontend","dist","index.html"))
-})
+// app.get("*",(req,res)=>{
+//         res.sendFile(path.resolve(_dirname,"Frontend","dist","index.html"))
+// })
 
 
 const connectDB = async () => {
