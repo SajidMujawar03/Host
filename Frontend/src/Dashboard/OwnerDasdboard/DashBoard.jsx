@@ -39,7 +39,7 @@ const DashBoard = () => {
     
             // Make DELETE request to the server
            
-            const res = await fetch(`/owner/${user._id}`, {
+            const res = await fetch(`api/v1/owner/${user._id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`  // Pass the token for authorization

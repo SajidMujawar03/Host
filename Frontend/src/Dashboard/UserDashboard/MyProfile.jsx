@@ -52,7 +52,7 @@ const MyProfile = ({ user }) => {
     setLoading(true)
 
     try {
-      const res = await fetch(`/user/${user._id}`,
+      const res = await fetch(`api/v1/user/${user._id}`,
         {
           method: 'put',
           headers: {

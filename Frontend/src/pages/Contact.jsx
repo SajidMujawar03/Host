@@ -26,7 +26,7 @@ const Contact = () => {
     console.log('Submitted Data:', formData);
 
     try {
-      const res = await fetch(`/webReview/postReview`, {
+      const res = await fetch(`api/v1/webReview/postReview`, {
         method: 'post',
         headers: {
           "Content-Type": "application/json"

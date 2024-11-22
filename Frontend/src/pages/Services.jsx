@@ -251,7 +251,7 @@ const Services = () => {
     // Fetch slots from the API
     const fetchSlots = async () => {
         try {
-            const response = await fetch(`/slot/slots`, {
+            const response = await fetch(`api/v1/slot/slots`, {
                 method: 'get',
                 headers: {
                     "Content-Type": "application/json"
