@@ -34,12 +34,12 @@ const corsOptions = {
 };
 
 
-app.get('/',(req,res)=>{
-    res.json({
-        message:"server is running"
-    })
-    console.log("API working")
-})
+// app.get('/',(req,res)=>{
+//     res.json({
+//         message:"server is running"
+//     })
+//     console.log("API working")
+// })
 
 
 mongoose.set({"strictQuery":true})
