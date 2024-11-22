@@ -4,8 +4,12 @@ import bodyParser from "body-parser"
 import mongoose from "mongoose";
 import cors from "cors"
 import dotenv from "dotenv"
+import path, { dirname } from "path"
+
 
 dotenv.config();
+
+const _dirname=path.resolve()
 
 import auth from './src/routes/auth.js'
 import user from "./src/routes/user.js"
@@ -37,11 +41,13 @@ app.get('/',(req,res)=>{
     console.log("API working")
 })
 
+
 mongoose.set({"strictQuery":true})
 
 
 app.use(cookiePraser())
 app.use(express.json());
+app.use(express.static(path.join(_dirname,'/Frontend/dist')))
 // app.use(bodyParser.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors(corsOptions))
@@ -51,6 +57,11 @@ app.use("/api/v1/owner",owner);
 app.use("/api/v1/slot",slot);
 app.use('/api/v1/bookings',booking)
 app.use('/api/v1/webReview',websiteReview)
+
+
+app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(_dirname,"Frontend","dist","index.html"))
+})
 
 
 const connectDB = async () => {
