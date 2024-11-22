@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../config';
+
 import { FaCalendarAlt, FaClock, FaMoneyBillAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify'
 import { authContext } from '../context/AuthContext.jsx'
@@ -46,6 +46,7 @@ const BookingPage = () => {
     const fetchBookingDetails = async () => {
         try {
             const response = await fetch(`/bookings/booking/${slotId}`);
+            console.log(response)
             const res = await response.json();
             const datas = res.data;
 
@@ -91,7 +92,8 @@ const BookingPage = () => {
                 const data = await response.json();
                 setSlot(data.data);
             } catch (error) {
-                console.error("Error fetching slot details:", error);
+            
+                console.error("Error fetching slot details:", error.message);
             }
         };
 

@@ -34,7 +34,7 @@
 //             setSlots(data.slots);
 //             setFilteredSlots(data.slots);  // Initially show all slots
 //         } catch (error) {
-//             console.error("Error fetching slots:", error);
+//             console.error("Error  slots:", error);
 //         }
 //     };
 
