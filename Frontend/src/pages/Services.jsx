@@ -21,7 +21,7 @@
 //     // Fetch slots from the API
 //     const fetchSlots = async () => {
 //         try {
-//             const response = await fetch(`${BASE_URL}/slot/slots`, {
+//             const response = await fetch(`/slot/slots`, {
 //                 method: 'get',
 //                 headers: {
 //                     "Content-Type": "application/json"
@@ -251,7 +251,7 @@ const Services = () => {
     // Fetch slots from the API
     const fetchSlots = async () => {
         try {
-            const response = await fetch(`${BASE_URL}/slot/slots`, {
+            const response = await fetch(`/slot/slots`, {
                 method: 'get',
                 headers: {
                     "Content-Type": "application/json"

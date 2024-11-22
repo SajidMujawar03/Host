@@ -45,7 +45,7 @@ const BookingPage = () => {
 
     const fetchBookingDetails = async () => {
         try {
-            const response = await fetch(`${BASE_URL}/bookings/booking/${slotId}`);
+            const response = await fetch(`/bookings/booking/${slotId}`);
             const res = await response.json();
             const datas = res.data;
 
@@ -85,7 +85,7 @@ const BookingPage = () => {
     useEffect(() => {
         const fetchSlotDetails = async () => {
             try {
-                const response = await fetch(`${BASE_URL}/slot/slot/${slotId}`);
+                const response = await fetch(`/slot/slot/${slotId}`);
                 const data = await response.json();
                 setSlot(data.data);
             } catch (error) {
@@ -145,7 +145,7 @@ if (selectedFromDate >= selectedToDate) {
 }
 
 
-            const availabilityResponse = await fetch(`${BASE_URL}/bookings/check-availability`, {
+            const availabilityResponse = await fetch(`/bookings/check-availability`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ if (selectedFromDate >= selectedToDate) {
 
             const totalHours = (selectedToDate - selectedFromDate) / (1.0 * 1000 * 60 * 60);
 
-            const response = await fetch(`${BASE_URL}/bookings/create-order`, {
+            const response = await fetch(`/bookings/create-order`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -192,7 +192,7 @@ if (selectedFromDate >= selectedToDate) {
                 currency: 'INR',
                 order_id: data.order_id,
                 handler: async function (response) {
-                    const verifyResponse = await fetch(`${BASE_URL}/bookings/verify-payment`, {
+                    const verifyResponse = await fetch(`/bookings/verify-payment`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -208,7 +208,7 @@ if (selectedFromDate >= selectedToDate) {
 
                     if (verificationData.success) {
                         setPaymentStatus('Payment successful!');
-                        await fetch(`${BASE_URL}/bookings/book-slot`, {
+                        await fetch(`/bookings/book-slot`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

@@ -23,7 +23,7 @@ const MyAccount = () => {
 
     const [tab,setTab]=useState("settings");
 
-    const {data:userData,loading,error}=useFetchData(`${BASE_URL}/user/profile/me`)
+    const {data:userData,loading,error}=useFetchData(`/user/profile/me`)
 
 
     const navigate=useNavigate();
@@ -39,7 +39,7 @@ const MyAccount = () => {
         try {
             console.log("hi")
             // Make DELETE request to the server
-            const res = await fetch(`${BASE_URL}/user/${localStorage.getItem("user")._id}`, {
+            const res = await fetch(`/user/${localStorage.getItem("user")._id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`  // Pass the token for authorization

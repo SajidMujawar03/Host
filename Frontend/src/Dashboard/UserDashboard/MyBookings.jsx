@@ -18,7 +18,7 @@
 //   useEffect(() => {
 //     const fetchSlotDetails = async () => {
 //       try {
-//         const response = await fetch(`${BASE_URL}/user/bookings/${user._id}`);
+//         const response = await fetch(`/user/bookings/${user._id}`);
 //         const data = await response.json();
 //         const slot = data.bookings;
 
@@ -104,7 +104,7 @@
 //   useEffect(() => {
 //     const fetchSlotDetails = async () => {
 //       try {
-//         const response = await fetch(`${BASE_URL}/user/bookings/${user._id}`);
+//         const response = await fetch(`/user/bookings/${user._id}`);
 //         const data = await response.json();
 //         const slot = data.bookings;
 
@@ -302,7 +302,7 @@ const MyBookings = () => {
   useEffect(() => {
     const fetchSlotDetails = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/user/bookings/${user._id}`);
+        const response = await fetch(`/user/bookings/${user._id}`);
         const data = await response.json();
         const slot = data.bookings;
 
